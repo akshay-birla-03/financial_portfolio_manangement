@@ -1,6 +1,4 @@
-Here's a suggested README file for your GitHub repository based on its content and typical structure for a financial portfolio management project:
 
-```markdown
 # Financial Portfolio Management
 
 This project is a comprehensive financial portfolio management system that helps users analyze, track, and optimize their investment portfolios. Built with modern tools, it offers features for managing multiple assets, calculating risk metrics, and visualizing portfolio performance.
