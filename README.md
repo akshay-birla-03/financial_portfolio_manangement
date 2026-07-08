@@ -1,63 +1,54 @@
+# 💼 Financial Portfolio Management & Optimization
 
-# Financial Portfolio Management
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akshay-birla-03/financial_portfolio_manangement/blob/main/notebooks/Run_in_Colab.ipynb)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](#)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white)](#)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-This project is a comprehensive financial portfolio management system that helps users analyze, track, and optimize their investment portfolios. Built with modern tools, it offers features for managing multiple assets, calculating risk metrics, and visualizing portfolio performance.
+An interactive portfolio analytics and **optimization** app: track a basket of assets,
+compute risk/return metrics, run mean-variance optimization, and visualise allocation and
+performance — served through a **Streamlit** dashboard, backed by pre-trained per-stock
+LSTM + ARIMA models.
+
+▶️ **Run it now, no setup:** click the **Open in Colab** badge — it clones, installs and
+loads the optimised portfolio (and can launch the full dashboard).
 
 ## Features
 
-- Add and manage various financial assets
-- Calculate key portfolio metrics such as expected return, risk, and Sharpe ratio
-- Visualize portfolio allocation and performance
-- Support for different asset classes and diversification strategies
-- User-friendly interface for easy portfolio adjustments
+- **Optimization**: mean-variance optimization via \`scipy.optimize\` (maximise Sharpe ratio)
+- **Risk metrics**: expected return, volatility, Sharpe ratio, per-asset weights
+- **Live prices** via \`yfinance\`; pre-trained models per stock in \`models/\`
+- **Interactive UI**: Streamlit + Plotly charts for allocation and performance
 
-## Technologies Used
+## Quickstart (local)
 
-- Python
-- Pandas & NumPy for data analysis
-- Matplotlib/Seaborn for visualization
-- Jupyter Notebook (if applicable)
-- Other relevant libraries or tools used
+\`\`\`bash
+git clone https://github.com/akshay-birla-03/financial_portfolio_manangement.git
+cd financial_portfolio_manangement
+pip install -r requirements.txt
+streamlit run app.py           # opens the dashboard at http://localhost:8501
+\`\`\`
 
-## Setup Instructions
+Retrain the per-stock models with \`python train_and_save_models.py\`.
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/akshay-birla-03/financial_portfolio_manangement.git
-    ```
+## Project layout
 
-2. Navigate to the project directory:
-    ```bash
-    cd financial_portfolio_manangement
-    ```
+\`\`\`
+app.py                       # Streamlit dashboard (main entry)
+train_and_save_models.py     # trains + saves per-stock LSTM/ARIMA models
+test.py                      # quick checks
+models/                      # trained artifacts (HDFC, INFY, RELIANCE, TATAELXSI) + optimized_portfolio.joblib
+notebooks/Run_in_Colab.ipynb # one-click Colab runner
+requirements.txt
+\`\`\`
 
-3. Create a virtual environment (optional but recommended):
-    ```bash
-    python -m venv env
-    source env/bin/activate    # On Windows use `env\Scripts\activate`
-    ```
+## Tech
 
-4. Install required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+Python · Streamlit · Plotly · SciPy · scikit-learn · TensorFlow/Keras · statsmodels · yfinance · pandas · NumPy
 
-5. Run the main scripts or notebooks as needed.
+## Disclaimer
 
-## Usage
-
-- Follow the instructions in the notebooks or scripts to input your asset data.
-- Customize parameters for your specific portfolio.
-- Use visualization tools to analyze your portfolio's performance.
-
-## Contributions
-
-Contributions are welcome! Please open an issue or submit a pull request with your improvements or features.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+For research and educational use only — **not** financial advice.
 
 ---
-
-Feel free to customize this README further with specific instructions, usage examples, or acknowledgments related to your project.
+Author: **Akshay Birla** · [GitHub](https://github.com/akshay-birla-03) · MIT License
